@@ -1,4 +1,4 @@
-/* Copyright 2009-2018 David Hadka
+/* Copyright 2009-2016 David Hadka
  *
  * This file is part of the MOEA Framework.
  *
@@ -22,6 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang3.SerializationUtils;
+import org.scenariotools.sml.runtime.SMLRuntimeStateGraph;
 
 /**
  * A solution to an optimization problem, storing the decision variables,
@@ -36,7 +37,7 @@ import org.apache.commons.lang3.SerializationUtils;
 public class Solution implements Serializable {
 
 	private static final long serialVersionUID = -1192586435663892479L;
-
+	
 	/**
 	 * The decision variables of this solution.
 	 */
@@ -56,6 +57,8 @@ public class Solution implements Serializable {
 	 * The attributes of this solutions.
 	 */
 	private final Map<String, Serializable> attributes;
+	
+	private SMLRuntimeStateGraph stategraph;
 
 	/**
 	 * Constructs a solution with the specified number of variables and 
@@ -406,4 +409,11 @@ public class Solution implements Serializable {
 		attributes.clear();
 	}
 
+	public void addSMLRuntimeStateGraph(SMLRuntimeStateGraph stategraph) {
+		this.stategraph = stategraph;		
+	}
+	
+	public SMLRuntimeStateGraph getSMLRuntimeStateGraph() {
+		return this.stategraph;		
+	}
 }

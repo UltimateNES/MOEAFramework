@@ -303,3 +303,4 @@ Export-Package: .,
  org.moeaframework.util.tree,
  org.moeaframework.util.weights,
  templates
+Import-Package: org.scenariotools.sml.runtime
