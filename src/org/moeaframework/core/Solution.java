@@ -59,6 +59,10 @@ public class Solution implements Serializable {
 	private final Map<String, Serializable> attributes;
 	
 	private SMLRuntimeStateGraph stategraph;
+	
+	private String fileName;
+	
+	private String program;
 
 	/**
 	 * Constructs a solution with the specified number of variables and 
@@ -415,5 +419,21 @@ public class Solution implements Serializable {
 	
 	public SMLRuntimeStateGraph getSMLRuntimeStateGraph() {
 		return this.stategraph;		
+	}
+
+	public String getFileName() {
+		return this.fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	public void setProgram(String program) {
+		this.program = program;
+	}
+	
+	public String getProgram() {
+		return this.program;
 	}
 }
